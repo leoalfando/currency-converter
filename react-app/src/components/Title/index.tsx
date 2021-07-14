@@ -5,9 +5,6 @@ interface CountryState {
 }
 
 class Title extends React.PureComponent<any, CountryState> {
-  constructor(props: any) {
-    super(props);
-  }
   render() {
     const { state } = this;
     return (
