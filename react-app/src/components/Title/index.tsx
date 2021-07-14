@@ -12,7 +12,7 @@ class Title extends React.PureComponent<any, CountryState> {
     const { state } = this;
     return (
       <div className="title-text-container">
-        <h1 color="#fff">Currency Exchange(SEK)</h1>
+        <h1 color="#fff">Currency Converter(SEK)</h1>
       </div>
     );
   }

@@ -21,20 +21,7 @@ class CountriesData extends React.PureComponent<any, CountryState> {
     this.state = {
       countryName: '',
       baseAmount: 0,
-      countryData: [
-        {
-          name: 'British Indian Ocean Territory',
-          population: 3000,
-          currencies: [
-            {
-              name: 'United States dollar USD',
-              exchangeRate: '1.123123123',
-              code: 'UD',
-              symbol: '$',
-            },
-          ],
-        },
-      ],
+      countryData: [],
     };
   }
   handleChange = (event: any) => {
@@ -81,22 +68,23 @@ class CountriesData extends React.PureComponent<any, CountryState> {
                   handleChange={this.handleChange}
                   state={state}
                 />
-                <div className="tbl-header">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th className="column-small">#</th>
-                        <th>Country Name</th>
-                        <th>Population</th>
-                        <th>Currency</th>
-                        <th>Rate</th>
-                        <th>Result</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-                <div className="tbl-content">
-                  {/* cellpadding="0" cellspacing="0" border="0" */}
+                { state.countryData?.length > 0
+                ? <div>
+                  <div className="tbl-header">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th className="column-small">#</th>
+                          <th>Country Name</th>
+                          <th>Population</th>
+                          <th>Currency</th>
+                          <th>Rate</th>
+                          <th>Result</th>
+                        </tr>
+                      </thead>
+                    </table>
+                  </div>
+                  <div className="tbl-content">
                   <table>
                     <tbody>
                       {state.countryData?.length > 0 &&
@@ -130,6 +118,9 @@ class CountriesData extends React.PureComponent<any, CountryState> {
                     </tbody>
                   </table>
                 </div>
+                </div>
+                : <h3 className="empty-text">Please enter country name</h3>
+              }
               </div>
             </div>
           </div>

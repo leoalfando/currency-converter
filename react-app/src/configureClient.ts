@@ -59,7 +59,6 @@ export const getToken = async () => {
   try {
     const token = Cookies.get('token');
     authToken = token ? token : '';
-    console.log(authToken);
     return authToken;
   } catch (error) {
     console.log(error);
